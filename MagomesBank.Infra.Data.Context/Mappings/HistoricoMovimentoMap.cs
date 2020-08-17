@@ -14,9 +14,9 @@ namespace MagomesBank.Infra.Data.Context.Mappings
 
             builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.IdContaCorrente)
+            builder.Property(c => c.ContaCorrenteId)
                 .IsRequired()
-                .HasColumnName("IdContaCorrente");
+                .HasColumnName("ContaCorrenteId");
 
             builder.Property(c => c.DataMovimento)
                 .IsRequired()
@@ -28,9 +28,11 @@ namespace MagomesBank.Infra.Data.Context.Mappings
 
             builder.HasOne(c => c.ContaCorrente)
                 .WithMany(p => p.Movimentos)
-                .HasForeignKey(d => d.IdContaCorrente)
+                .HasForeignKey(d => d.ContaCorrenteId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_CC_HISTMOVIMENTOS");
+
+            
         }
     }
 }

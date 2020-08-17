@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MagomesBank.Domain.Services\MagomesBank.Domain.Services.csproj" />
     <ProjectReference Include="..\MagomesBank.Dominio\MagomesBank.Domain.csproj" />
   </ItemGroup>
 

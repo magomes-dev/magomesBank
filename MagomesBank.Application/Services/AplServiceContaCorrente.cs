@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using MagomesBank.Application.DTO;
+using MagomesBank.Application.DTO.Param;
 using MagomesBank.Application.Interfaces;
 using MagomesBank.Domain.Interfaces;
 using MagomesBank.Domain.Models;
@@ -21,38 +22,29 @@ namespace MagomesBank.Application.Services
             _serviceContaCorrente = serviceContaCorrente;
         }
 
-
-        public ResultadoValidacao Add(ContaCorrenteDTO obj)
-        {
-            var contaCorrente = _mapper.Map<ContaCorrenteDTO, ContaCorrente>(obj);
-            return _serviceContaCorrente.Add(contaCorrente);        
-        }
-
-        public IEnumerable<ContaCorrenteDTO> GetAll()
-        {
-            return _mapper.Map<IEnumerable<ContaCorrenteDTO>>(_serviceContaCorrente.GetAll());
-        }
-
         public ContaCorrenteDTO GetById(int id)
         {
             return _mapper.Map<ContaCorrenteDTO>(_serviceContaCorrente.GetById(id));
         }
 
-        public ResultadoValidacao Remove(ContaCorrenteDTO obj)
+        public ContaCorrenteDTO GetByUsuario(int usuarioId)
         {
-            var contaCorrente = _mapper.Map<ContaCorrenteDTO, ContaCorrente>(obj);
-            return _serviceContaCorrente.Remove(contaCorrente);
+            return _mapper.Map<ContaCorrenteDTO>(_serviceContaCorrente.GetByUsuario(usuarioId));
         }
 
-        public ResultadoValidacao Update(ContaCorrenteDTO obj)
+        public ResultadoValidacao Depositar(TransacaoDTO dto)
         {
-            var contaCorrente = _mapper.Map<ContaCorrenteDTO, ContaCorrente>(obj);
-            return _serviceContaCorrente.Update(contaCorrente);
+            return _serviceContaCorrente.Depositar(dto.ContaCorrenteId, dto.Valor);
         }
 
-        public void Dispose()
+        public ResultadoValidacao Pagar(TransacaoDTO dto)
         {
-            throw new NotImplementedException();
+            return _serviceContaCorrente.Pagar(dto.ContaCorrenteId, dto.Valor);
+        }
+
+        public ResultadoValidacao Resgatar(TransacaoDTO dto)
+        {
+            return _serviceContaCorrente.Resgatar(dto.ContaCorrenteId, dto.Valor);
         }
     }
 }

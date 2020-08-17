@@ -13,7 +13,9 @@ namespace MagomesBank.Application.AutoMapper
     {
         public AutoMapperProfile()
         {
-            CreateMap<ContaCorrente, ContaCorrenteDTO>();
+            CreateMap<ContaCorrente, ContaCorrenteDTO>()
+                .ForMember(d => d.NomeUsuario, m => m.MapFrom(o => o.Usuario.Nome +' '+ o.Usuario.Sobrenome))
+                .ForMember(d => d.Movimentos, m => m.MapFrom(o => o.Movimentos));
             CreateMap<ContaCorrenteDTO, ContaCorrente>();
 
             CreateMap<HistoricoMovimento, HistoricoMovimentoDTO>();
@@ -26,7 +28,10 @@ namespace MagomesBank.Application.AutoMapper
             CreateMap<UsuarioTokenDTO, Usuario>();
 
             CreateMap<Usuario, CreateUsuarioDTO>();
-            CreateMap<CreateUsuarioDTO, Usuario>();          
+            CreateMap<CreateUsuarioDTO, Usuario>();
+
+            CreateMap<UsuarioDTO, UsuarioTokenDTO>();
+            CreateMap<UsuarioTokenDTO, UsuarioDTO>();
 
 
         }

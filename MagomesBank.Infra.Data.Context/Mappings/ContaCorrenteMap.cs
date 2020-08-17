@@ -19,13 +19,16 @@ namespace MagomesBank.Infra.Data.Context.Mappings
                 .IsRequired()
                 .HasColumnName("Saldo");
 
-            builder.Property(c => c.IdUsuario)
+            builder.Property(c => c.UsuarioId)
                 .IsRequired()
-                .HasColumnName("IdUsuario");
+                .HasColumnName("UsuarioId");
 
             builder.Property(c => c.DataCriacao)
                 .IsRequired()
                 .HasColumnName("DataCriacao");
+
+            builder.HasMany(c => c.Movimentos)
+                .WithOne(e => e.ContaCorrente);
         }
     }
 }

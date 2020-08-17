@@ -13,7 +13,7 @@ namespace MagomesBank.Infra.Cross.IOC
         public static void RegisterServices(IServiceCollection services)
         {
             // Application
-            services.AddScoped<IAplServiceUsuario, AplServiceUsuario>();
+            services.AddScoped<IAplServiceContaCorrente, AplServiceContaCorrente>();
             services.AddScoped<IAplServiceHistoricoMovimento, AplServiceHistoricoMovimento>();
             services.AddScoped<IAplServiceUsuario, AplServiceUsuario>();
 

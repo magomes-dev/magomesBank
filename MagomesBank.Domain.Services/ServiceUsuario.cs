@@ -11,12 +11,16 @@ namespace MagomesBank.Domain.Services
     public class ServiceUsuario : ServiceBase<Usuario>, IServiceUsuario
     {
         private readonly IRepositoryUsuario _repositoryUsuario;
+        private readonly IServiceContaCorrente _serviceContaCorrente;
         private ResultadoValidacao _resultadoValidacao;
 
-        public ServiceUsuario(IRepositoryUsuario RepositoryUsuario)
+        public ServiceUsuario(
+            IRepositoryUsuario RepositoryUsuario,
+            IServiceContaCorrente serviceContaCorrente)
             : base(RepositoryUsuario)
         {
             _repositoryUsuario = RepositoryUsuario;
+            _serviceContaCorrente = serviceContaCorrente;
         }
 
         public Usuario Login(string username, string password)
@@ -40,6 +44,7 @@ namespace MagomesBank.Domain.Services
         public ResultadoValidacao Add(Usuario usuario, string password)
         {
             _resultadoValidacao = new ResultadoValidacao();
+            byte[] passwordHash, passwordSalt;
 
             // validation
             if (string.IsNullOrWhiteSpace(password))
@@ -53,14 +58,14 @@ namespace MagomesBank.Domain.Services
                 _resultadoValidacao.Erros.Append("Username \"" + usuario.UserName + "\" já existe");
                 return _resultadoValidacao;
             }                
-
-            byte[] passwordHash, passwordSalt;
+            
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
             usuario.PasswordHash = passwordHash;
             usuario.PasswordSalt = passwordSalt;
 
             _repositoryUsuario.Add(usuario);
+            _resultadoValidacao = _serviceContaCorrente.AbrirContaCorrente(usuario.Id);
 
             return _resultadoValidacao;
         }

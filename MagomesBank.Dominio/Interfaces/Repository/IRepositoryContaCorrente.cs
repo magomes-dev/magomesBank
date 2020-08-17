@@ -8,6 +8,6 @@ namespace MagomesBank.Domain.Interfaces
 {
     public interface IRepositoryContaCorrente : IRepositoryBase<ContaCorrente>
     {
-
+        ContaCorrente GetByUsuario(int UsuarioId);
     }
 }

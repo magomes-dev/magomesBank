@@ -30,16 +30,13 @@ namespace MagomesBank.Infra.Data.Context.Migrations
                         .HasColumnName("DataCriacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdUsuario")
-                        .HasColumnName("IdUsuario")
+                    b.Property<int>("UsuarioId")
+                        .HasColumnName("UsuarioId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Saldo")
                         .HasColumnName("Saldo")
                         .HasColumnType("decimal(18,2)");
-
-                    b.Property<int?>("UsuarioId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -59,8 +56,8 @@ namespace MagomesBank.Infra.Data.Context.Migrations
                         .HasColumnName("DataMovimento")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IdContaCorrente")
-                        .HasColumnName("IdContaCorrente")
+                    b.Property<int>("ContaCorrenteId")
+                        .HasColumnName("ContaCorrenteId")
                         .HasColumnType("int");
 
                     b.Property<int>("TipoMovimento")
@@ -72,7 +69,7 @@ namespace MagomesBank.Infra.Data.Context.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdContaCorrente");
+                    b.HasIndex("ContaCorrenteId");
 
                     b.ToTable("HistoricoMovimento");
                 });
@@ -115,7 +112,7 @@ namespace MagomesBank.Infra.Data.Context.Migrations
                 {
                     b.HasOne("MagomesBank.Domain.Models.ContaCorrente", "ContaCorrente")
                         .WithMany("Movimentos")
-                        .HasForeignKey("IdContaCorrente")
+                        .HasForeignKey("ContaCorrenteId")
                         .HasConstraintName("FK_CC_HISTMOVIMENTOS")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

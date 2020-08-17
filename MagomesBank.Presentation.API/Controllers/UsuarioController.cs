@@ -9,6 +9,7 @@ using AutoMapper;
 using MagomesBank.Application.DTO;
 using MagomesBank.Application.DTO.Param;
 using MagomesBank.Application.DTO.Response;
+using MagomesBank.Application.Interfaces;
 using MagomesBank.Domain.Interfaces;
 using MagomesBank.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -24,12 +25,12 @@ namespace MagomesBank.Presentation.API.Controllers
     [Route("[controller]")]
     public class UsuarioController : ControllerBase
     {
-        private IServiceUsuario _serviceUsuario;
+        private IAplServiceUsuario _serviceUsuario;
         private IMapper _mapper;
         private readonly AppSettings _appSettings;
 
         public UsuarioController(
-            IServiceUsuario serviceUsuario,
+            IAplServiceUsuario serviceUsuario,
             IMapper mapper,
             IOptions<AppSettings> appSettings)
         {
@@ -42,14 +43,14 @@ namespace MagomesBank.Presentation.API.Controllers
         [HttpPost("login")]
         public IActionResult Authenticate([FromBody] LoginUsarioDTO dto)
         {
-            var usuario = _serviceUsuario.Login(dto.Username, dto.Password);
+            var usuario = _serviceUsuario.Login(dto);
 
             if (usuario == null)
                 return BadRequest(new { message = "Username ou senha inválido!" });
 
             var usuarioTokenDto = _mapper.Map<UsuarioTokenDTO>(usuario);
 
-            usuarioTokenDto.Token = GerarToken(usuario);
+            usuarioTokenDto.Token = GerarToken(usuario.Id);
 
             return Ok(usuarioTokenDto);
         }
@@ -64,7 +65,7 @@ namespace MagomesBank.Presentation.API.Controllers
             try
             {
                 // create user
-                var resultadoValidacao = _serviceUsuario.Add(user, dto.Password);
+                var resultadoValidacao = _serviceUsuario.Add(dto);
 
                 return Ok(new ResponseDTO { 
                     Success = resultadoValidacao.Valido,
@@ -78,7 +79,7 @@ namespace MagomesBank.Presentation.API.Controllers
             }
         }
 
-        private string GerarToken(Usuario usuario)
+        private string GerarToken(int id)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
@@ -86,7 +87,7 @@ namespace MagomesBank.Presentation.API.Controllers
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, usuario.Id.ToString())
+                    new Claim(ClaimTypes.Name, id.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
