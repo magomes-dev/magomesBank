@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MagomesBank.Domain.Services
 {
-    public class ServiceHistoricoMovimento : ServiceBase<HistoricoMovimento>, IRepositoryHistoricoMovimento
+    public class ServiceHistoricoMovimento : ServiceBase<HistoricoMovimento>, IServiceHistoricoMovimento
     {
         private readonly IRepositoryHistoricoMovimento _repositoryHistoricoMovimento;
 

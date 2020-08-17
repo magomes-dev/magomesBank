@@ -10,5 +10,6 @@ namespace MagomesBank.Domain.Models
         public decimal Saldo { get; set; }
         public DateTime DataCriacao { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual IEnumerable<HistoricoMovimento> Movimentos { get; set; }
     }
 }

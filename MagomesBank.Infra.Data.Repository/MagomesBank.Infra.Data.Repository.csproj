@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MagomesBank.Dominio\MagomesBank.Domain.csproj" />
+    <ProjectReference Include="..\MagomesBank.Infra.Data.Context\MagomesBank.Infra.Data.Context.csproj" />
+  </ItemGroup>
+
+</Project>
