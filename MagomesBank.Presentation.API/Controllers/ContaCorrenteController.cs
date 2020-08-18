@@ -20,12 +20,11 @@ namespace MagomesBank.Presentation.API.Controllers
     [Route("[controller]")]
     public class ContaCorrenteController : ControllerBase
     {
-        private IAplServiceContaCorrente _serviceContaCorrente;
+        private readonly IAplServiceContaCorrente _serviceContaCorrente;
         private readonly AppSettings _appSettings;
 
         public ContaCorrenteController(
             IAplServiceContaCorrente serviceUsuario,
-            IMapper mapper,
             IOptions<AppSettings> appSettings)
         {
             _serviceContaCorrente = serviceUsuario;

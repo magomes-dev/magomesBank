@@ -1,0 +1,985 @@
+{
+  "MagomesBank.Domain.dll": {
+    "C:\\Projetos\\magomesBank\\MagomesBank.Dominio\\Models\\Base\\Base.cs": {
+      "MagomesBank.Domain.Models.Base": {
+        "System.Int32 MagomesBank.Domain.Models.Base::get_Id()": {
+          "Lines": {
+            "9": 63
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Dominio\\Models\\ContaCorrente.cs": {
+      "MagomesBank.Domain.Models.ContaCorrente": {
+        "System.Int32 MagomesBank.Domain.Models.ContaCorrente::get_UsuarioId()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal MagomesBank.Domain.Models.ContaCorrente::get_Saldo()": {
+          "Lines": {
+            "10": 35
+          },
+          "Branches": []
+        },
+        "System.DateTime MagomesBank.Domain.Models.ContaCorrente::get_DataCriacao()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.Usuario MagomesBank.Domain.Models.ContaCorrente::get_Usuario()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<MagomesBank.Domain.Models.HistoricoMovimento> MagomesBank.Domain.Models.ContaCorrente::get_Movimentos()": {
+          "Lines": {
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Dominio\\Models\\HistoricoMovimento.cs": {
+      "MagomesBank.Domain.Models.HistoricoMovimento": {
+        "System.Int32 MagomesBank.Domain.Models.HistoricoMovimento::get_ContaCorrenteId()": {
+          "Lines": {
+            "7": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime MagomesBank.Domain.Models.HistoricoMovimento::get_DataMovimento()": {
+          "Lines": {
+            "8": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal MagomesBank.Domain.Models.HistoricoMovimento::get_ValorMovimento()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.TpOperacaoFinanceira MagomesBank.Domain.Models.HistoricoMovimento::get_TipoMovimento()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.ContaCorrente MagomesBank.Domain.Models.HistoricoMovimento::get_ContaCorrente()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Dominio\\Models\\Usuario.cs": {
+      "MagomesBank.Domain.Models.Usuario": {
+        "System.String MagomesBank.Domain.Models.Usuario::get_Nome()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.String MagomesBank.Domain.Models.Usuario::get_Sobrenome()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "System.String MagomesBank.Domain.Models.Usuario::get_UserName()": {
+          "Lines": {
+            "11": 15
+          },
+          "Branches": []
+        },
+        "System.Byte[] MagomesBank.Domain.Models.Usuario::get_PasswordHash()": {
+          "Lines": {
+            "12": 6
+          },
+          "Branches": []
+        },
+        "System.Byte[] MagomesBank.Domain.Models.Usuario::get_PasswordSalt()": {
+          "Lines": {
+            "13": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Dominio\\Models\\Validacoes\\ResultadoValidacao.cs": {
+      "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao": {
+        "System.Collections.Generic.List`1<System.String> MagomesBank.Domain.Models.Validacoes.ResultadoValidacao::get_Erros()": {
+          "Lines": {
+            "10": 45
+          },
+          "Branches": []
+        },
+        "System.Boolean MagomesBank.Domain.Models.Validacoes.ResultadoValidacao::get_Valido()": {
+          "Lines": {
+            "11": 9
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 11,
+              "Offset": 12,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 8
+            }
+          ]
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Models.Validacoes.ResultadoValidacao::Adiciona(System.String)": {
+          "Lines": {
+            "18": 8,
+            "19": 8,
+            "20": 8,
+            "21": 8
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Models.Validacoes.ResultadoValidacao::.ctor()": {
+          "Lines": {
+            "12": 28,
+            "13": 28,
+            "14": 28,
+            "15": 28
+          },
+          "Branches": []
+        }
+      }
+    }
+  },
+  "MagomesBank.Domain.Services.dll": {
+    "C:\\Projetos\\magomesBank\\MagomesBank.Domain.Services\\Base\\ServiceBase.cs": {
+      "MagomesBank.Domain.Services.ServiceBase`1": {
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceBase`1::Add(TEntity)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "TEntity MagomesBank.Domain.Services.ServiceBase`1::GetById(System.Int32)": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.IEnumerable`1<TEntity> MagomesBank.Domain.Services.ServiceBase`1::GetAll()": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceBase`1::Update(TEntity)": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "36": 0,
+            "37": 0
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceBase`1::Remove(TEntity)": {
+          "Lines": {
+            "39": 0,
+            "40": 0,
+            "42": 0,
+            "43": 0
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceBase`1::Dispose()": {
+          "Lines": {
+            "46": 0,
+            "47": 0,
+            "48": 0
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceBase`1::.ctor(MagomesBank.Domain.Interfaces.IRepositoryBase`1<TEntity>)": {
+          "Lines": {
+            "14": 12,
+            "15": 12,
+            "16": 12,
+            "17": 12,
+            "18": 12
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Domain.Services\\ServiceContaCorrente.cs": {
+      "MagomesBank.Domain.Services.ServiceContaCorrente": {
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceContaCorrente::AbrirContaCorrente(System.Int32)": {
+          "Lines": {
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "31": 1,
+            "32": 1,
+            "33": 1,
+            "34": 1,
+            "36": 1,
+            "37": 1
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceContaCorrente::Depositar(System.Int32,System.Decimal)": {
+          "Lines": {
+            "40": 3,
+            "41": 3,
+            "43": 3,
+            "44": 1,
+            "46": 2,
+            "47": 1,
+            "49": 1,
+            "51": 1,
+            "53": 1,
+            "54": 1,
+            "55": 1,
+            "56": 1,
+            "57": 1,
+            "58": 1,
+            "60": 1,
+            "61": 3
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 43,
+              "Offset": 20,
+              "EndOffset": 41,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 46,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 54,
+              "EndOffset": 75,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "MagomesBank.Domain.Models.ContaCorrente MagomesBank.Domain.Services.ServiceContaCorrente::GetByUsuario(System.Int32)": {
+          "Lines": {
+            "64": 1,
+            "65": 1,
+            "66": 1
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceContaCorrente::Pagar(System.Int32,System.Decimal)": {
+          "Lines": {
+            "69": 3,
+            "70": 3,
+            "72": 3,
+            "73": 1,
+            "75": 2,
+            "76": 0,
+            "78": 2,
+            "79": 1,
+            "81": 1,
+            "83": 1,
+            "85": 1,
+            "86": 1,
+            "87": 1,
+            "88": 1,
+            "89": 1,
+            "90": 1,
+            "92": 1,
+            "93": 3
+          },
+          "Branches": [
+            {
+              "Line": 72,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 72,
+              "Offset": 20,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 75,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 58,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 78,
+              "Offset": 94,
+              "EndOffset": 96,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 78,
+              "Offset": 94,
+              "EndOffset": 115,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceContaCorrente::DepositarRentabilizacao(System.Int32,System.Decimal)": {
+          "Lines": {
+            "96": 1,
+            "97": 1,
+            "99": 1,
+            "101": 1,
+            "103": 1,
+            "104": 1,
+            "105": 1,
+            "106": 1,
+            "107": 1,
+            "108": 1,
+            "110": 1,
+            "111": 1
+          },
+          "Branches": []
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceContaCorrente::Resgatar(System.Int32,System.Decimal)": {
+          "Lines": {
+            "114": 3,
+            "115": 3,
+            "117": 3,
+            "118": 1,
+            "120": 2,
+            "121": 0,
+            "123": 2,
+            "124": 1,
+            "126": 1,
+            "128": 1,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "133": 1,
+            "134": 1,
+            "135": 1,
+            "137": 1,
+            "138": 3
+          },
+          "Branches": [
+            {
+              "Line": 117,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 117,
+              "Offset": 20,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 120,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 120,
+              "Offset": 58,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 123,
+              "Offset": 94,
+              "EndOffset": 96,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 123,
+              "Offset": 94,
+              "EndOffset": 115,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceContaCorrente::.ctor(MagomesBank.Domain.Interfaces.IRepositoryContaCorrente,MagomesBank.Domain.Interfaces.IServiceHistoricoMovimento)": {
+          "Lines": {
+            "20": 12,
+            "21": 12,
+            "22": 12,
+            "23": 12,
+            "24": 12,
+            "25": 12
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Domain.Services\\ServiceHistoricoMovimento.cs": {
+      "MagomesBank.Domain.Services.ServiceHistoricoMovimento": {
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceHistoricoMovimento::Add(MagomesBank.Domain.Models.HistoricoMovimento)": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "24": 1,
+            "25": 1,
+            "26": 1
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceHistoricoMovimento::.ctor(MagomesBank.Domain.Interfaces.IRepositoryHistoricoMovimento)": {
+          "Lines": {
+            "15": 1,
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Domain.Services\\ServiceRendimentoDiario.cs": {
+      "MagomesBank.Domain.Services.ServiceRendimentoDiario": {
+        "System.Void MagomesBank.Domain.Services.ServiceRendimentoDiario::Rentabilizar(System.Int32)": {
+          "Lines": {
+            "22": 0,
+            "23": 0,
+            "24": 0,
+            "25": 0,
+            "26": 0
+          },
+          "Branches": []
+        },
+        "System.Decimal MagomesBank.Domain.Services.ServiceRendimentoDiario::CalculaRendimentoDiario(System.Decimal)": {
+          "Lines": {
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0,
+            "34": 0
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceRendimentoDiario::RentabilizarContasCorrentes()": {
+          "Lines": {
+            "37": 1,
+            "38": 1,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 71,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 49,
+              "EndOffset": 51,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 42,
+              "Offset": 49,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 40,
+              "Offset": 71,
+              "EndOffset": 73,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceRendimentoDiario::.ctor(MagomesBank.Domain.Interfaces.IServiceContaCorrente)": {
+          "Lines": {
+            "16": 1,
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceRendimentoDiario::.cctor()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Domain.Services\\ServiceUsuario.cs": {
+      "MagomesBank.Domain.Services.ServiceUsuario": {
+        "MagomesBank.Domain.Models.Usuario MagomesBank.Domain.Services.ServiceUsuario::Login(System.String,System.String)": {
+          "Lines": {
+            "26": 3,
+            "27": 3,
+            "28": 1,
+            "30": 2,
+            "33": 2,
+            "34": 1,
+            "37": 1,
+            "38": 0,
+            "40": 1,
+            "41": 3
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 27,
+              "Offset": 7,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 27,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 20,
+              "EndOffset": 26,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 33,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 33,
+              "Offset": 45,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 37,
+              "Offset": 76,
+              "EndOffset": 82,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            }
+          ]
+        },
+        "MagomesBank.Domain.Models.Validacoes.ResultadoValidacao MagomesBank.Domain.Services.ServiceUsuario::Add(MagomesBank.Domain.Models.Usuario,System.String)": {
+          "Lines": {
+            "44": 3,
+            "45": 3,
+            "49": 3,
+            "50": 1,
+            "51": 1,
+            "55": 2,
+            "56": 1,
+            "57": 1,
+            "60": 1,
+            "62": 1,
+            "63": 1,
+            "65": 1,
+            "66": 1,
+            "68": 1,
+            "69": 3
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 20,
+              "EndOffset": 22,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 20,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 55,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 55,
+              "Offset": 66,
+              "EndOffset": 104,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceUsuario::CreatePasswordHash(System.String,System.Byte[]&,System.Byte[]&)": {
+          "Lines": {
+            "72": 3,
+            "73": 0,
+            "74": 0,
+            "76": 3,
+            "77": 3,
+            "78": 3,
+            "79": 3,
+            "80": 3,
+            "81": 3
+          },
+          "Branches": [
+            {
+              "Line": 73,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 73,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 74,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 74,
+              "Offset": 28,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Boolean MagomesBank.Domain.Services.ServiceUsuario::VerifyPasswordHash(System.String,System.Byte[],System.Byte[])": {
+          "Lines": {
+            "84": 1,
+            "85": 0,
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "90": 1,
+            "91": 1,
+            "92": 1,
+            "93": 130,
+            "94": 64,
+            "95": 0,
+            "96": 64,
+            "97": 1,
+            "99": 1,
+            "100": 1
+          },
+          "Branches": [
+            {
+              "Line": 85,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 85,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 86,
+              "Offset": 28,
+              "EndOffset": 30,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 86,
+              "Offset": 28,
+              "EndOffset": 46,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 87,
+              "Offset": 58,
+              "EndOffset": 60,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 87,
+              "Offset": 58,
+              "EndOffset": 76,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 88,
+              "Offset": 91,
+              "EndOffset": 93,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 88,
+              "Offset": 91,
+              "EndOffset": 109,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 93,
+              "Offset": 188,
+              "EndOffset": 143,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 64
+            },
+            {
+              "Line": 95,
+              "Offset": 162,
+              "EndOffset": 164,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 95,
+              "Offset": 162,
+              "EndOffset": 169,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 64
+            },
+            {
+              "Line": 93,
+              "Offset": 188,
+              "EndOffset": 190,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void MagomesBank.Domain.Services.ServiceUsuario::.ctor(MagomesBank.Domain.Interfaces.IRepositoryUsuario,MagomesBank.Domain.Interfaces.IServiceContaCorrente)": {
+          "Lines": {
+            "17": 6,
+            "18": 6,
+            "19": 6,
+            "20": 6,
+            "21": 6,
+            "22": 6,
+            "23": 6
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Projetos\\magomesBank\\MagomesBank.Domain.Services\\Jobs\\ServiceRendimentoDiarioJob.cs": {
+      "MagomesBank.Domain.Services.Jobs.ServiceRendimentoDiarioJob": {
+        "System.Threading.Tasks.Task MagomesBank.Domain.Services.Jobs.ServiceRendimentoDiarioJob::StartAsync(System.Threading.CancellationToken)": {
+          "Lines": {
+            "27": 0,
+            "28": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0,
+            "40": 0,
+            "41": 0,
+            "42": 0,
+            "43": 0,
+            "44": 0,
+            "45": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0
+          },
+          "Branches": []
+        },
+        "System.Threading.Tasks.Task MagomesBank.Domain.Services.Jobs.ServiceRendimentoDiarioJob::StopAsync(System.Threading.CancellationToken)": {
+          "Lines": {
+            "52": 0,
+            "53": 0,
+            "55": 0,
+            "56": 0
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void MagomesBank.Domain.Services.Jobs.ServiceRendimentoDiarioJob::RentabilizarContasCorrentes(System.Object)": {
+          "Lines": {
+            "59": 0,
+            "60": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "65": 0
+          },
+          "Branches": []
+        },
+        "System.Void MagomesBank.Domain.Services.Jobs.ServiceRendimentoDiarioJob::.ctor(Microsoft.Extensions.DependencyInjection.IServiceScopeFactory)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        }
+      }
+    }
+  }
+}

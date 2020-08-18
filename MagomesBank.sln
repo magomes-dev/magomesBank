@@ -33,6 +33,10 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagomesBank.Presentation.WEB", "MagomesBank.Presentation.WEB\MagomesBank.Presentation.WEB.csproj", "{C8959A13-3624-4594-BB78-C34496A596F0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Testes", "0-Testes", "{56435878-7282-41EC-B6FF-D6FA5D138988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagomesBank.Test", "MagomesBank.Test\MagomesBank.Test.csproj", "{7DFC735D-764B-4E94-A729-497228346968}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +79,10 @@ Global
 		{C8959A13-3624-4594-BB78-C34496A596F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8959A13-3624-4594-BB78-C34496A596F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8959A13-3624-4594-BB78-C34496A596F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DFC735D-764B-4E94-A729-497228346968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DFC735D-764B-4E94-A729-497228346968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DFC735D-764B-4E94-A729-497228346968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DFC735D-764B-4E94-A729-497228346968}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,6 +98,7 @@ Global
 		{6CB80E15-0624-43CE-8B69-BC2CBF6ED353} = {C4F05235-6ACD-46C3-B7BA-812445C239D4}
 		{9A0B9555-1021-4D16-B07B-CFE865C10928} = {6CB80E15-0624-43CE-8B69-BC2CBF6ED353}
 		{C8959A13-3624-4594-BB78-C34496A596F0} = {BD09146C-ABEE-40B9-BFEF-C95CD16B7519}
+		{7DFC735D-764B-4E94-A729-497228346968} = {56435878-7282-41EC-B6FF-D6FA5D138988}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AD124A4-F829-483F-B680-694D2B8FEE4F}

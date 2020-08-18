@@ -18,7 +18,7 @@ namespace MagomesBank.Domain.Services
             _serviceContaCorrente = serviceContaCorrente;
         }
 
-        public void Rentabilizar(int contaCorrenteId)
+        private void Rentabilizar(int contaCorrenteId)
         {
             var contaCorrente = _serviceContaCorrente.GetById(contaCorrenteId);
             var rendimentoDiario = CalculaRendimentoDiario(contaCorrente.Saldo);

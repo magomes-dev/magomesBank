@@ -49,14 +49,13 @@ namespace MagomesBank.Domain.Services
             // validation
             if (string.IsNullOrWhiteSpace(password))
             {
-                _resultadoValidacao.Erros.Append("Senha é requerida");
-                return _resultadoValidacao;
+                return _resultadoValidacao.Adiciona("Senha é requerida");
+                 
             }
 
             if (_repositoryUsuario.ExisteUsername(usuario.UserName))
             {
-                _resultadoValidacao.Erros.Append("Username \"" + usuario.UserName + "\" já existe");
-                return _resultadoValidacao;
+                return _resultadoValidacao.Adiciona("Username \"" + usuario.UserName + "\" já existe");
             }                
             
             CreatePasswordHash(password, out passwordHash, out passwordSalt);

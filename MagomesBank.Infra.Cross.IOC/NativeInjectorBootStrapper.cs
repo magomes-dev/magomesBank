@@ -16,7 +16,6 @@ namespace MagomesBank.Infra.Cross.IOC
         {
             // Application
             services.AddScoped<IAplServiceContaCorrente, AplServiceContaCorrente>();
-            services.AddScoped<IAplServiceHistoricoMovimento, AplServiceHistoricoMovimento>();
             services.AddScoped<IAplServiceUsuario, AplServiceUsuario>();
 
             // Domain - Services
