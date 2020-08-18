@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using MagomesBank.Application.DTO;
+using MagomesBank.Application.DTO.Param;
+using MagomesBank.Application.DTO.Response;
 using MagomesBank.Application.Interfaces;
 using MagomesBank.Domain.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -19,7 +21,6 @@ namespace MagomesBank.Presentation.API.Controllers
     public class ContaCorrenteController : ControllerBase
     {
         private IAplServiceContaCorrente _serviceContaCorrente;
-        private IMapper _mapper;
         private readonly AppSettings _appSettings;
 
         public ContaCorrenteController(
@@ -28,14 +29,73 @@ namespace MagomesBank.Presentation.API.Controllers
             IOptions<AppSettings> appSettings)
         {
             _serviceContaCorrente = serviceUsuario;
-            _mapper = mapper;
             _appSettings = appSettings.Value;
         }
 
-        [HttpGet("consultaPorUsuario/{id}")]
-        public ContaCorrenteDTO consultaPorUsuario(int id)
+        [HttpGet("{id}/consultaPorUsuario")]
+        public ContaCorrenteDTO ConsultaPorUsuario(int id)
         {
             return _serviceContaCorrente.GetByUsuario(id);
+        }
+
+        [HttpPost("{id}/depositar")]
+        public IActionResult Depositar(int id, TransacaoDTO dto)
+        {
+            dto.ContaCorrenteId = id;
+            try
+            {
+                var resultadoValidacao = _serviceContaCorrente.Depositar(dto);
+
+                return Ok(new ResponseDTO
+                {
+                    Success = resultadoValidacao.Valido,
+                    Message = resultadoValidacao.Erros
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("{id}/resgatar")]
+        public IActionResult Resgatar(int id, TransacaoDTO dto)
+        {
+            dto.ContaCorrenteId = id;
+            try
+            {
+                var resultadoValidacao = _serviceContaCorrente.Resgatar(dto);
+
+                return Ok(new ResponseDTO
+                {
+                    Success = resultadoValidacao.Valido,
+                    Message = resultadoValidacao.Erros
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
+        }
+
+        [HttpPost("{id}/pagar")]
+        public IActionResult Pagar(int id, TransacaoDTO dto)
+        {
+            dto.ContaCorrenteId = id;
+            try
+            {
+                var resultadoValidacao = _serviceContaCorrente.Pagar(dto);
+
+                return Ok(new ResponseDTO
+                {
+                    Success = resultadoValidacao.Valido,
+                    Message = resultadoValidacao.Erros
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
     }

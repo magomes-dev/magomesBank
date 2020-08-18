@@ -14,6 +14,7 @@ namespace MagomesBank.Domain.Services
         public ServiceBase(IRepositoryBase<TEntity> Repository)
         {
             _repository = Repository;
+            ResultadoValidacao = new ResultadoValidacao();
         }
         public virtual ResultadoValidacao Add(TEntity obj)
         {

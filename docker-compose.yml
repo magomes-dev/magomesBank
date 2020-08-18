@@ -17,3 +17,10 @@ services:
     build:
       context: .
       dockerfile: MagomesBank.Presentation.API/Dockerfile
+  magomesbank.presentation.ui:
+    image: ${DOCKER_REGISTRY-}magomesbankpresentationui
+    ports:  
+      - '5001:80'
+    build:
+      context: .
+      dockerfile: Dockerfile

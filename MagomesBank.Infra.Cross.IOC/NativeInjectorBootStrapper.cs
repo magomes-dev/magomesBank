@@ -2,8 +2,10 @@
 using MagomesBank.Application.Services;
 using MagomesBank.Domain.Interfaces;
 using MagomesBank.Domain.Services;
+using MagomesBank.Domain.Services.Jobs;
 using MagomesBank.Infra.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System;
 
 namespace MagomesBank.Infra.Cross.IOC
@@ -21,6 +23,10 @@ namespace MagomesBank.Infra.Cross.IOC
             services.AddScoped<IServiceContaCorrente, ServiceContaCorrente>();
             services.AddScoped<IServiceHistoricoMovimento, ServiceHistoricoMovimento>();
             services.AddScoped<IServiceUsuario, ServiceUsuario>();
+            services.AddScoped<IServiceRendimentoDiario, ServiceRendimentoDiario>();
+
+            // Domain - Services - Jobs
+            //services.AddScoped<IHostedService, ServiceRendimentoDiarioJob>();
 
             // Infra - Data - Repository
             services.AddScoped<IRepositoryContaCorrente, RepositoryContaCorrente>();

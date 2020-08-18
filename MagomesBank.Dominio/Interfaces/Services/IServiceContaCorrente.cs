@@ -11,8 +11,10 @@ namespace MagomesBank.Domain.Interfaces
     {
         ResultadoValidacao AbrirContaCorrente(int idUsuario);
         ContaCorrente GetByUsuario(int usuarioId);
-        ResultadoValidacao Depositar(int ContaCorrenteId, decimal valor);
-        ResultadoValidacao Resgatar(int ContaCorrenteId, decimal valor);
-        ResultadoValidacao Pagar(int ContaCorrenteId, decimal valor);
+        ResultadoValidacao Depositar(int contaCorrenteId, decimal valor);
+        ResultadoValidacao Resgatar(int contaCorrenteId, decimal valor);
+        ResultadoValidacao Pagar(int contaCorrenteId, decimal valor);
+        ResultadoValidacao DepositarRentabilizacao(int contaCorrenteId, decimal valor);
+
     }
 }

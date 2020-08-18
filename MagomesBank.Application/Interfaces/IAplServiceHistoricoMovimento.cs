@@ -13,6 +13,5 @@ namespace MagomesBank.Application.Interfaces
         IEnumerable<HistoricoMovimentoDTO> GetAll();
         ResultadoValidacao Update(HistoricoMovimentoDTO dto);
         ResultadoValidacao Remove(HistoricoMovimentoDTO dto);
-        void Dispose();
     }
 }

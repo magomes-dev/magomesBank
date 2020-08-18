@@ -50,9 +50,5 @@ namespace MagomesBank.Application.Services
             return _serviceHistoricoMovimento.Update(historicoMovimento);
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

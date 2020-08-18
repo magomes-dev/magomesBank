@@ -1,6 +1,6 @@
 using System;
 
-namespace MagomesBank.Presentation.API
+namespace MagomesBank.Presentation.UI
 {
     public class WeatherForecast
     {

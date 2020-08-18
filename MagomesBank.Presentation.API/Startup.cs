@@ -20,6 +20,8 @@ using Microsoft.IdentityModel.Tokens;
 using MagomesBank.Infra.Cross.IOC;
 using MagomesBank.Application.AutoMapper;
 using Microsoft.OpenApi.Models;
+using MagomesBank.Domain.Services;
+using MagomesBank.Domain.Services.Jobs;
 
 namespace MagomesBank.Presentation.API
 {
@@ -44,6 +46,8 @@ namespace MagomesBank.Presentation.API
 
             // AutoMapper Settings
             services.AddAutoMapper(typeof(AutoMapperProfile));
+
+            services.AddHostedService<ServiceRendimentoDiarioJob>();
 
             services.AddDbContext<DataContext>();
 
