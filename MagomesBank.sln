@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MagomesBank.Infra.Cross.IOC
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{CD92D260-ABA7-4D49-A30B-8AB9FCABA055}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagomesBank.Presentation.UI", "MagomesBank.Presentation.UI\MagomesBank.Presentation.UI.csproj", "{AB273918-3234-456D-B571-3EB804D345FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagomesBank.Presentation.WEB", "MagomesBank.Presentation.WEB\MagomesBank.Presentation.WEB.csproj", "{C8959A13-3624-4594-BB78-C34496A596F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,10 @@ Global
 		{CD92D260-ABA7-4D49-A30B-8AB9FCABA055}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD92D260-ABA7-4D49-A30B-8AB9FCABA055}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD92D260-ABA7-4D49-A30B-8AB9FCABA055}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AB273918-3234-456D-B571-3EB804D345FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AB273918-3234-456D-B571-3EB804D345FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AB273918-3234-456D-B571-3EB804D345FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AB273918-3234-456D-B571-3EB804D345FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8959A13-3624-4594-BB78-C34496A596F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8959A13-3624-4594-BB78-C34496A596F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8959A13-3624-4594-BB78-C34496A596F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8959A13-3624-4594-BB78-C34496A596F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,7 +89,7 @@ Global
 		{63ECA6F1-22D3-458B-89AA-BCE6818B27DF} = {A4DDAA90-8E16-4994-881E-76FAECE3AD0B}
 		{6CB80E15-0624-43CE-8B69-BC2CBF6ED353} = {C4F05235-6ACD-46C3-B7BA-812445C239D4}
 		{9A0B9555-1021-4D16-B07B-CFE865C10928} = {6CB80E15-0624-43CE-8B69-BC2CBF6ED353}
-		{AB273918-3234-456D-B571-3EB804D345FB} = {BD09146C-ABEE-40B9-BFEF-C95CD16B7519}
+		{C8959A13-3624-4594-BB78-C34496A596F0} = {BD09146C-ABEE-40B9-BFEF-C95CD16B7519}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9AD124A4-F829-483F-B680-694D2B8FEE4F}

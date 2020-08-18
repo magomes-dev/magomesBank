@@ -122,7 +122,8 @@ namespace MagomesBank.Presentation.API
                 });
             });
 
-
+            services.AddCors();
+            services.AddMvc();
 
         }
 
@@ -138,6 +139,8 @@ namespace MagomesBank.Presentation.API
             UpdateDatabase(app);
 
             app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200", "http://localhost:80").AllowAnyHeader().AllowAnyMethod());
 
             app.UseRouting();
 
@@ -157,15 +160,11 @@ namespace MagomesBank.Presentation.API
         }
         private static void UpdateDatabase(IApplicationBuilder app)
         {
-            using (var serviceScope = app.ApplicationServices
+            using var serviceScope = app.ApplicationServices
                 .GetRequiredService<IServiceScopeFactory>()
-                .CreateScope())
-            {
-                using (var context = serviceScope.ServiceProvider.GetService<DataContext>())
-                {
-                    context.Database.Migrate();
-                }
-            }
+                .CreateScope();
+            using var context = serviceScope.ServiceProvider.GetService<DataContext>();
+            context.Database.Migrate();
         }
     }
 }

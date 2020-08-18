@@ -41,12 +41,12 @@ namespace MagomesBank.Domain.Services
             var contaCorrente = _repositoryContaCorrente.GetById(contaCorrenteId);
 
             if (contaCorrente == null)
-            {
-                ResultadoValidacao.Erros.Append("Conta Corrente não encontrada");
-                return ResultadoValidacao;
-            }
+                return ResultadoValidacao.Adiciona("Conta Corrente não encontrada");
 
-            contaCorrente.Saldo += valor;
+            if (valor <= 0)
+                    return ResultadoValidacao.Adiciona("Valor para depósito deve ser maior que zero.");
+
+                contaCorrente.Saldo += valor;
 
             _repositoryContaCorrente.Update(contaCorrente);
 
@@ -70,16 +70,13 @@ namespace MagomesBank.Domain.Services
             var contaCorrente = _repositoryContaCorrente.GetById(contaCorrenteId);
 
             if (contaCorrente == null)
-            {
-                ResultadoValidacao.Erros.Append("Conta Corrente não encontrada");
-                return ResultadoValidacao;
-            }
+                return ResultadoValidacao.Adiciona("Conta Corrente não encontrada");
 
             if (contaCorrente.Saldo < valor)
-            {
-                ResultadoValidacao.Erros.Append("Saldo insuficiente");
-                return ResultadoValidacao;
-            }
+                return ResultadoValidacao.Adiciona("Saldo insuficiente");
+
+            if (valor <= 0)
+                return ResultadoValidacao.Adiciona("Valor deve ser maior que zero.");
 
             contaCorrente.Saldo -= valor;
 
@@ -118,16 +115,13 @@ namespace MagomesBank.Domain.Services
             var contaCorrente = _repositoryContaCorrente.GetById(contaCorrenteId);
 
             if (contaCorrente == null)
-            {
-                ResultadoValidacao.Erros.Append("Conta Corrente não encontrada");
-                return ResultadoValidacao;
-            }
+                return ResultadoValidacao.Adiciona("Conta Corrente não encontrada");
 
             if (contaCorrente.Saldo < valor)
-            {
-                ResultadoValidacao.Erros.Append("Saldo insuficiente");
-                return ResultadoValidacao;
-            }
+                return ResultadoValidacao.Adiciona("Saldo insuficiente");
+
+            if (valor <= 0)
+                return ResultadoValidacao.Adiciona("Valor do resgate deve ser maior que zero.");
 
             contaCorrente.Saldo -= valor;
 

@@ -1,0 +1,61 @@
+.card{
+    border-radius: 12px;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    background-color: #FFFFFF;
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    border: 1 none;
+    transition: transform 300ms cubic-bezier(0.34, 2, 0.6, 1), box-shadow 200ms ease;
+}
+
+.card-stats .card-body {
+    padding: 15px 15px 0px;
+}
+
+.card-stats .icon-big {
+    font-size: 3em;
+    min-height: 64px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.nc-icon {
+    display: inline-block;
+    font: normal normal normal 14px/1 "nucleo-icons";
+    font-size: inherit;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card-stats .icon-big i {
+    line-height: 59px;
+}
+
+.text-success, a.text-success:focus, a.text-success:hover {
+    color: #6bd098 !important;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+
+.card-category {
+    font-size: 1em;
+}
+
+.category, .card-category {
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #9A9A9A;
+    font-size: 0.7142em;
+}
+
+.card-stats .card-body .numbers {
+    text-align: right;
+    font-size: 2em;
+}

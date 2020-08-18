@@ -1,0 +1,116 @@
+﻿<!-- <div class="col-md-12 mt-5" style="text-align: center;display: inline-flex;"> -->
+<div class="col-md-12 mt-5 row justify-content-md-center" style="text-align: center;">
+    <div class="col-md-8 mt-5">
+        <div class="card" style="border: 1 none !important;">
+            <div class="card-body">
+                <div class="card-title"><img class="d-block mx-auto" width="100" height="100"
+                        src="../../assets/logo.jpg" /></div>
+                <h3 class="card-subtitle mb-2 text-muted" style="margin-top: 10px;">Olá {{dados.nomeUsuario}}</h3>
+                <h5 class="card-text">Saldo Disponível: R$ {{dados.saldo}}</h5>
+                <hr />
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0" >{{error}}</div>
+                <div style="display: inline-flex; margin-top: 25px;">                    
+                    <div class="card " style="width: 18rem; margin-right: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Depósito</h5>
+                            <p class="card-text">Informe o valor que deseja depositar em sua conta corrente.</p>
+                            <form  [formGroup]="depositForm" (ngSubmit)="onSubmitDeposit()">
+                                <div class="form-group row">
+                                    <div class="input-group mb-3">
+                                        <input type="number" min="0" formControlName="depositAmount" class="form-control"
+                                            width="2px" [ngClass]="{ 'is-invalid': submittedDeposit && fd.depositAmount.errors }" />
+                                        <div *ngIf="submittedDeposit && fd.depositAmount.errors" class="invalid-feedback">
+                                            <div *ngIf="fd.depositAmount.errors.required">Preencha o valor</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button [disabled]="loading" class="btn btn-outline-primary btn-sm btn-block" style="align-content: center;">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Depositar
+                                    </button>
+                                </div>
+                            </form>                          
+                        </div>
+                    </div>  
+                    <div class="card" style="width: 18rem; margin-right: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Retirada</h5>
+                            <p class="card-text">Informe o valor que deseja retirar de sua conta corrente.</p>
+                            <form  [formGroup]="withdrawForm" (ngSubmit)="onSubmitWithdraw()">
+                                <div class="form-group row">
+                                    <div class="input-group mb-3">
+                                        <input type="number" min="0" formControlName="withdrawAmount" class="form-control"
+                                            width="2px"
+                                            [ngClass]="{ 'is-invalid': submittedWithdraw && fw.withdrawAmount.errors }" />
+                                        <div *ngIf="submittedWithdraw && fw.withdrawAmount.errors" class="invalid-feedback">
+                                            <div *ngIf="fw.withdrawAmount.errors.required">Preencha o valor</div>
+                                        </div>                                        
+                                    </div>                                    
+                                    <button [disabled]="loading" class="btn btn-outline-primary btn-sm btn-block" style="align-content: center;">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Retirar
+                                    </button>
+                                </div>
+                            </form>                          
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Pagamento</h5>
+                            <p class="card-text">Informe o valor do pagamento a ser debitado</p>
+                            <form  [formGroup]="paymentForm" (ngSubmit)="onSubmitPayment()">
+                                <div class="form-group row">
+                                    <div class="input-group mb-3">
+                                        <input type="number" min="0" formControlName="paymentAmount" class="form-control"
+                                            width="2px"
+                                            [ngClass]="{ 'is-invalid': submittedPayment && fp.paymentAmount.errors }" />
+                                        <div *ngIf="submittedPayment && fp.paymentAmount.errors" class="invalid-feedback">
+                                            <div *ngIf="fp.paymentAmount.errors.required">Preencha o valor</div>
+                                        </div>                                     
+                                    </div>                                    
+                                    <button [disabled]="loading" class="btn btn-outline-primary btn-sm btn-block" style="align-content: center;">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Pagar
+                                    </button>
+                                </div>
+                            </form>                          
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title"></div>
+                                <h3 class="card-subtitle mb-2 text-muted" style="margin-top: 10px;"></h3>
+                                <h5 class="card-text">Histórico de movimentação</h5>
+                                <hr />
+                
+                                <table class="table">
+                                    <thead>
+                                        <tr>                                            
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Valor</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of dados.movimentos">                                            
+                                            <td>{{descrTipoMovimento(item.tipoMovimento)}}</td>
+                                            <td>{{item.dataMovimento | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                            <td>R$ {{item.valorMovimento}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>                
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-link" (click)="logout()">Logout</button>
+                </div>
+        </div>
+    </div>    
+    
+</div>

@@ -25,8 +25,8 @@ namespace MagomesBank.Presentation.API.Controllers
     [Route("[controller]")]
     public class UsuarioController : ControllerBase
     {
-        private IAplServiceUsuario _serviceUsuario;
-        private IMapper _mapper;
+        private readonly IAplServiceUsuario _serviceUsuario;
+        private readonly IMapper _mapper;
         private readonly AppSettings _appSettings;
 
         public UsuarioController(
@@ -59,9 +59,7 @@ namespace MagomesBank.Presentation.API.Controllers
         [HttpPost("cadastro")]
         public IActionResult Register([FromBody] CreateUsuarioDTO dto)
         {
-            // map model to entity
-            var user = _mapper.Map<Usuario>(dto);
-
+            
             try
             {
                 // create user

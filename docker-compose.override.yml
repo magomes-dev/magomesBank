@@ -1,6 +1,7 @@
 version: '3.4'
 
 services:
+
   magomesbank.presentation.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
