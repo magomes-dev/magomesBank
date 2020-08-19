@@ -16,7 +16,7 @@ Certifique-se que tenha instalado em sua máquina:
 ### Backend, docker compose. 
 No terminal, navegue até a raiz do projeto e execute:
 ``` bash
- $ docker-compose up
+ $ docker-compose up --build
 ```
 
 ### Frontend
