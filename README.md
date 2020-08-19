@@ -19,8 +19,8 @@ No terminal, navegue até a raiz do projeto.
 ```
 
 ### Observações
-* O banco de dados é inicializado junto com a API, não é necessario executar as migrations manualmente.
-* As tabelas são populadas na inicialização do banco de dados, permitindo testar todas as funcioanalidades do sistema logo após a execução. 
+* O banco de dados é inicializado junto com a API, não é necessário executar as migrations manualmente.
+* As tabelas são populadas na inicialização do banco de dados, permitindo testar todas as funcionalidades do sistema logo após a execução. 
 
 ## Uso do sistema
 
@@ -38,8 +38,8 @@ http://localhost:4200
 
 ### Backend
 * A autenticação com o backend é baseada em um token de segurança JWT.
-* As rotas disponiveis podem ser consultadas e testadas em: https://localhost:5000/swagger/index.html. O suporte a JWT está habilitado no Swagger.
-* No ASP.NET Core, backgrounds tasks podem ser implementadas como serviços hospedados (IHostedService). Utilizo esta estratégia para agendar um job a ser executado todos os dias às 00:01, este job é responsavel pela rentabilização diaria das contas correntes.
+* As rotas disponíveis podem ser consultadas e testadas em: https://localhost:5000/swagger/index.html. O suporte a JWT está habilitado no Swagger.
+* No ASP.NET Core, backgrounds tasks podem ser implementadas como serviços hospedados (IHostedService). Utilizo esta estratégia para agendar um job a ser executado todos os dias às 00:01, este job é responsável pela rentabilização diária das contas correntes.
 
 ## Testes
 No terminal, navegue até a raiz do projeto.
