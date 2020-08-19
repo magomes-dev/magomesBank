@@ -5,6 +5,7 @@ O objetivo do projeto é criar uma simulação de um sistema de controle de cont
 
 ### Pré-requisitos 
 Certifique-se que tenha instalado em sua máquina:
+* [Node](https://nodejs.org/en/)
 * [Docker](https://docs.docker.com/)
 * [Git](https://git-scm.com/downloads)
 
@@ -12,10 +13,18 @@ Certifique-se que tenha instalado em sua máquina:
 ``` bash
  $ git clone https://github.com/magomes-dev/magomesBank.git
 ```
-### Docker Compose
-No terminal, navegue até a raiz do projeto.
+### Backend, docker compose. 
+No terminal, navegue até a raiz do projeto e execute:
 ``` bash
  $ docker-compose up
+```
+
+### Frontend
+No terminal, navegue até a raiz do projeto e execute:
+``` bash
+ $ cd Frontend
+ $ npm install
+ $ npm start
 ```
 
 ### Observações
